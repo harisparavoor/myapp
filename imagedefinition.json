@@ -1,6 +1,6 @@
 [
 {
-"name": "node-js",
-"ImageURI":"495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest"
+  "name": "node-js",
+  "image_URI": "495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest"
 }
 ]
