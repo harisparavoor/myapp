@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hari.ps you eks new2021' });
+  res.render('index', { title: 'Hari.ps you eks new year 2021' });
 });
 
 module.exports = router;
