@@ -1,1 +1,1 @@
-[{ "name": "nodedemo","imageUri": "495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest"}]
+[{ "name": "NodeAppECS","imageUri": "495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest"}]
