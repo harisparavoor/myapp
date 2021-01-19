@@ -1,4 +1,4 @@
-FROM node:12
+FROM 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
 
 COPY . /opt/app
 
