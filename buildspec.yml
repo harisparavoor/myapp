@@ -32,6 +32,7 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name eksnodejs
+      - kubectl delete deployment nodedemo1
       - kubectl apply -f deployment.yaml
       - echo Writing image definitions file...
       - printf '[{"name":"container_name","imageUri":"image_URI"}]' > imagedefinitions.json
