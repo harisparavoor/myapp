@@ -35,7 +35,6 @@ spec:
     ports:
       - name: http
         protocol: TCP
-        nodeport: 32443
         port: 83
         targetPort: 3000
     selector:
