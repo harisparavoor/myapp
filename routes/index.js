@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hari.ps:pods win ' });
+  res.render('index', { title: 'Hari.ps:pods win scucces ' });
 });
 
 module.exports = router;
