@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodedemo3
+  name: nodedemo2
   namespace: default
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nodedemo3
+      app: nodedemo2
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -16,12 +16,12 @@ spec:
   template:
     metadata:
       labels:
-        app: nodedemo3
+        app: nodedemo2
     spec:
       containers:
         - image: 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
           imagePullPolicy: IfNotPresent
-          name: nodedemo3
+          name: nodedemo2
           ports:
             - containerPort: 3000
               protocol: TCP
@@ -29,7 +29,7 @@ spec:
   apiVersion: v1
   kind: Service
   metadata:
-    name: nodedemo3
+    name: nodedemo2
     namespace: default
   spec:
     ports:
@@ -38,6 +38,6 @@ spec:
         port: 83
         targetPort: 3000
     selector:
-      app: nodedemo3
+      app: nodedemo2
     sessionAffinity: None
     type: NodePort
