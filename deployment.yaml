@@ -19,9 +19,9 @@ spec:
         app: nodedemo1
     spec:
       containers:
-        - image: 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+        - name: nodedemo1
+          image: 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
           imagePullPolicy: Always
-          name: nodedemo1
           ports:
             - containerPort: 3000
               protocol: TCP
