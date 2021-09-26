@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodedemo1
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodedemo1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nodedemo1
+    spec:
+      containers:
+        - name: nodedemo1
+          image: 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+       imagePullSecrets:
+          - name: myapp-aws-ecr-us-east-1
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: nodedemo1
+    namespace: default
+  spec:
+    ports:
+      - name: http
+        protocol: TCP
+        port: 83
+        targetPort: 3000
+    selector:
+      app: nodedemo1
+    sessionAffinity: None
+    type: NodePort
