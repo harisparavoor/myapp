@@ -9,7 +9,7 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
      # - sed -i 's@ImageUri@'"$REPOSITORY_URI:latest"'@' imagedefinition.json
-      #- REPOSITORY_URI=532607548077.dkr.ecr.ap-south-1.amazonaws.com/myapp
+      - REPOSITORY_URI=532607548077.dkr.ecr.ap-south-1.amazonaws.com/myapp
   build:
     commands:
       - echo Build started on `date`
