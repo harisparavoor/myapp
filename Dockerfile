@@ -1,5 +1,5 @@
 #FROM 495247221722.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
-FROM --platform=linux/amd64 node:18
+FROM --platform=linux/arm64/v8 node:18
 
 COPY . /opt/app
 
